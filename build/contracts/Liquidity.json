@@ -1,0 +1,973 @@
+{
+  "contractName": "Liquidity",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "totalLiquidityMinted",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"totalLiquidityMinted\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/abstract/Liquidity.sol\":\"Liquidity\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/abstract/Liquidity.sol\":{\"keccak256\":\"0x4cfbe6ab4e54bae5bd19117e99942916b5e0681365bdc0ca277e9abdec8c2d1a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f28227e514faeb02553be33bdbeaefea237c7f0925e12c132017ea73d03afee9\",\"dweb:/ipfs/QmWLCCqwPgDuPasCa7rnG9uzxbN7Ptf1dDeDv5wG4CvcnS\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nabstract contract Liquidity {\r\n    uint256 public totalLiquidityMinted = 0;\r\n\r\n    uint256 private constant MAX_LIQUIDITY_SELL = 30000000 * uint256(10)**18;\r\n\r\n    modifier notExceedLiquiditySupply(uint256 _amount) {\r\n        uint256 nextLiquidityMinted = totalLiquidityMinted + _amount;\r\n        require(nextLiquidityMinted <= MAX_LIQUIDITY_SELL);\r\n        _;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Crisla\\Documents\\Repos\\repos\\smart-contracts\\contracts\\abstract\\Liquidity.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/abstract/Liquidity.sol",
+    "exportedSymbols": {
+      "Liquidity": [
+        5107
+      ]
+    },
+    "id": 5108,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5075,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:26"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "Liquidity",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 5107,
+        "linearizedBaseContracts": [
+          5107
+        ],
+        "name": "Liquidity",
+        "nameLocation": "78:9:26",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "fb4a43a6",
+            "id": 5078,
+            "mutability": "mutable",
+            "name": "totalLiquidityMinted",
+            "nameLocation": "110:20:26",
+            "nodeType": "VariableDeclaration",
+            "scope": 5107,
+            "src": "95:39:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5076,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "95:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "30",
+              "id": 5077,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "133:1:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 5088,
+            "mutability": "constant",
+            "name": "MAX_LIQUIDITY_SELL",
+            "nameLocation": "168:18:26",
+            "nodeType": "VariableDeclaration",
+            "scope": 5107,
+            "src": "143:72:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5079,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "143:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 5087,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3330303030303030",
+                "id": 5080,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "189:8:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_30000000_by_1",
+                  "typeString": "int_const 30000000"
+                },
+                "value": "30000000"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "commonType": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "id": 5086,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "leftExpression": {
+                  "arguments": [
+                    {
+                      "hexValue": "3130",
+                      "id": 5083,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "208:2:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_10_by_1",
+                        "typeString": "int_const 10"
+                      },
+                      "value": "10"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_10_by_1",
+                        "typeString": "int_const 10"
+                      }
+                    ],
+                    "id": 5082,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "200:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint256_$",
+                      "typeString": "type(uint256)"
+                    },
+                    "typeName": {
+                      "id": 5081,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "200:7:26",
+                      "typeDescriptions": {}
+                    }
+                  },
+                  "id": 5084,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "200:11:26",
+                  "tryCall": false,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "nodeType": "BinaryOperation",
+                "operator": "**",
+                "rightExpression": {
+                  "hexValue": "3138",
+                  "id": 5085,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "213:2:26",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_18_by_1",
+                    "typeString": "int_const 18"
+                  },
+                  "value": "18"
+                },
+                "src": "200:15:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "189:26:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 5105,
+              "nodeType": "Block",
+              "src": "276:153:26",
+              "statements": [
+                {
+                  "assignments": [
+                    5093
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 5093,
+                      "mutability": "mutable",
+                      "name": "nextLiquidityMinted",
+                      "nameLocation": "295:19:26",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5105,
+                      "src": "287:27:26",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 5092,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "287:7:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 5097,
+                  "initialValue": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 5096,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 5094,
+                      "name": "totalLiquidityMinted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5078,
+                      "src": "317:20:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "+",
+                    "rightExpression": {
+                      "id": 5095,
+                      "name": "_amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5090,
+                      "src": "340:8:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "317:31:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "287:61:26"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 5101,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 5099,
+                          "name": "nextLiquidityMinted",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5093,
+                          "src": "367:19:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "id": 5100,
+                          "name": "MAX_LIQUIDITY_SELL",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5088,
+                          "src": "390:18:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "367:41:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 5098,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "359:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 5102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "359:50:26",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5103,
+                  "nodeType": "ExpressionStatement",
+                  "src": "359:50:26"
+                },
+                {
+                  "id": 5104,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "420:1:26"
+                }
+              ]
+            },
+            "id": 5106,
+            "name": "notExceedLiquiditySupply",
+            "nameLocation": "233:24:26",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5091,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5090,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "266:8:26",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5106,
+                  "src": "258:16:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5089,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "257:18:26"
+            },
+            "src": "224:205:26",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5108,
+        "src": "60:372:26",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:401:26"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/abstract/Liquidity.sol",
+    "exportedSymbols": {
+      "Liquidity": [
+        5107
+      ]
+    },
+    "id": 5108,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5075,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:26"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "Liquidity",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 5107,
+        "linearizedBaseContracts": [
+          5107
+        ],
+        "name": "Liquidity",
+        "nameLocation": "78:9:26",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "fb4a43a6",
+            "id": 5078,
+            "mutability": "mutable",
+            "name": "totalLiquidityMinted",
+            "nameLocation": "110:20:26",
+            "nodeType": "VariableDeclaration",
+            "scope": 5107,
+            "src": "95:39:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5076,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "95:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "30",
+              "id": 5077,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "133:1:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 5088,
+            "mutability": "constant",
+            "name": "MAX_LIQUIDITY_SELL",
+            "nameLocation": "168:18:26",
+            "nodeType": "VariableDeclaration",
+            "scope": 5107,
+            "src": "143:72:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5079,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "143:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 5087,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3330303030303030",
+                "id": 5080,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "189:8:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_30000000_by_1",
+                  "typeString": "int_const 30000000"
+                },
+                "value": "30000000"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "commonType": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "id": 5086,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "leftExpression": {
+                  "arguments": [
+                    {
+                      "hexValue": "3130",
+                      "id": 5083,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "208:2:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_10_by_1",
+                        "typeString": "int_const 10"
+                      },
+                      "value": "10"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_10_by_1",
+                        "typeString": "int_const 10"
+                      }
+                    ],
+                    "id": 5082,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "200:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint256_$",
+                      "typeString": "type(uint256)"
+                    },
+                    "typeName": {
+                      "id": 5081,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "200:7:26",
+                      "typeDescriptions": {}
+                    }
+                  },
+                  "id": 5084,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "200:11:26",
+                  "tryCall": false,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "nodeType": "BinaryOperation",
+                "operator": "**",
+                "rightExpression": {
+                  "hexValue": "3138",
+                  "id": 5085,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "213:2:26",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_18_by_1",
+                    "typeString": "int_const 18"
+                  },
+                  "value": "18"
+                },
+                "src": "200:15:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "189:26:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 5105,
+              "nodeType": "Block",
+              "src": "276:153:26",
+              "statements": [
+                {
+                  "assignments": [
+                    5093
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 5093,
+                      "mutability": "mutable",
+                      "name": "nextLiquidityMinted",
+                      "nameLocation": "295:19:26",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5105,
+                      "src": "287:27:26",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 5092,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "287:7:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 5097,
+                  "initialValue": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 5096,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 5094,
+                      "name": "totalLiquidityMinted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5078,
+                      "src": "317:20:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "+",
+                    "rightExpression": {
+                      "id": 5095,
+                      "name": "_amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5090,
+                      "src": "340:8:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "317:31:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "287:61:26"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 5101,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 5099,
+                          "name": "nextLiquidityMinted",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5093,
+                          "src": "367:19:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "id": 5100,
+                          "name": "MAX_LIQUIDITY_SELL",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5088,
+                          "src": "390:18:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "367:41:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 5098,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "359:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 5102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "359:50:26",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5103,
+                  "nodeType": "ExpressionStatement",
+                  "src": "359:50:26"
+                },
+                {
+                  "id": 5104,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "420:1:26"
+                }
+              ]
+            },
+            "id": 5106,
+            "name": "notExceedLiquiditySupply",
+            "nameLocation": "233:24:26",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5091,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5090,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "266:8:26",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5106,
+                  "src": "258:16:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5089,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "257:18:26"
+            },
+            "src": "224:205:26",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5108,
+        "src": "60:372:26",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:401:26"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.9+commit.e5eed63a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-01T21:56:33.303Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
