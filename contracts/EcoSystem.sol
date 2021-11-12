@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.9;
 
 /**
  * @title Ecosystem mint
@@ -17,12 +17,12 @@ abstract contract EcoSystem {
  	*/
 	uint256 internal _firstEcosystemMintTimeStamp = 0; 
 
-	uint256 private _ecosystemHalvingTime =30 days;
+	uint256 constant private _ecosystemHalvingTime =30 days;
 	
 	/**
  	* @dev stores first period monthly ecosystem supply 
  	*/
-	uint256 internal _firstEcosystemPeriodSupply = MAX_ECOSYSTEM_SUPPLY * 2 / 100;
+	uint256 constant internal _firstEcosystemPeriodSupply = MAX_ECOSYSTEM_SUPPLY * 2 / 100;
 
 	/**
  	* @dev stores minimum amount for monthly ecosystem supply 
@@ -43,8 +43,9 @@ abstract contract EcoSystem {
  	* @dev increment ecosystem supply if not exceed allowed amount at block time
  	*/
 	function incrementEcosystemSupply(uint256 _amount) internal 
-	canIncrementEcosystemSupply(_amount) {
-		if(_firstEcosystemPeriodSupply == 0){
+	canIncrementEcosystemSupply(_amount) 
+	{
+		if(_firstEcosystemMintTimeStamp == 0){
 			_firstEcosystemMintTimeStamp = block.timestamp;
 		}
 		

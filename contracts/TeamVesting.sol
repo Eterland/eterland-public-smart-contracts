@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.9;
 
-import "./abstract/ERC20VestingWallet.sol";  
+import "./ERC20VestingWallet.sol";  
 
 /**
  * @title TeamVesting

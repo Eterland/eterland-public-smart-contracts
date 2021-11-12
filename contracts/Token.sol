@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.9;
 
-import "./abstract/EcoSystem.sol";
-import "./abstract/EterAccessControl.sol";
-import "./abstract/Liquidity.sol";
-import "./abstract/Moderator.sol";
-import "./abstract/Staking.sol";
-import "./abstract/Event.sol";
-import "./abstract/ContentCreator.sol";
+import "./EcoSystem.sol";
+import "./EterAccessControl.sol";
+import "./Liquidity.sol";
+import "./Moderator.sol";
+import "./Staking.sol";
+import "./Event.sol";
+import "./ContentCreator.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract ETER is

@@ -15,7 +15,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"totalLiquidityMinted\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/abstract/Liquidity.sol\":\"Liquidity\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/abstract/Liquidity.sol\":{\"keccak256\":\"0x4cfbe6ab4e54bae5bd19117e99942916b5e0681365bdc0ca277e9abdec8c2d1a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f28227e514faeb02553be33bdbeaefea237c7f0925e12c132017ea73d03afee9\",\"dweb:/ipfs/QmWLCCqwPgDuPasCa7rnG9uzxbN7Ptf1dDeDv5wG4CvcnS\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"totalLiquidityMinted\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Stores liquidity mint status\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Liquidity Mint\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Liquidity.sol\":\"Liquidity\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Liquidity.sol\":{\"keccak256\":\"0x831d3c5ad12afeb0ee13d31a182f2ea9cf367ea4ae9972749cd5c95b2a713d34\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ffa2c3a23cfa0cf9df5e435469c40186e7993324638643654f264680b2585e23\",\"dweb:/ipfs/QmVAqM238UeFQDj1t23GHFUMjfnfehzpqWFZCzFDajJTwn\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -23,29 +23,28 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nabstract contract Liquidity {\r\n    uint256 public totalLiquidityMinted = 0;\r\n\r\n    uint256 private constant MAX_LIQUIDITY_SELL = 30000000 * uint256(10)**18;\r\n\r\n    modifier notExceedLiquiditySupply(uint256 _amount) {\r\n        uint256 nextLiquidityMinted = totalLiquidityMinted + _amount;\r\n        require(nextLiquidityMinted <= MAX_LIQUIDITY_SELL);\r\n        _;\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\Crisla\\Documents\\Repos\\repos\\smart-contracts\\contracts\\abstract\\Liquidity.sol",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.8.9;\r\n\r\n/**\r\n * @title Liquidity Mint\r\n * @dev Stores liquidity mint status\r\n */\r\nabstract contract Liquidity {\r\n    uint256 public totalLiquidityMinted = 0;\r\n\r\n    uint256 private constant MAX_LIQUIDITY_SELL = 30000000 * uint256(10)**18;\r\n\r\n    modifier notExceedLiquiditySupply(uint256 _amount) {\r\n        uint256 nextLiquidityMinted = totalLiquidityMinted + _amount;\r\n        require(nextLiquidityMinted <= MAX_LIQUIDITY_SELL);\r\n        _;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Crisla\\Documents\\Repos\\repos\\eterland-public-smart-contracts\\contracts\\Liquidity.sol",
   "ast": {
-    "absolutePath": "project:/contracts/abstract/Liquidity.sol",
+    "absolutePath": "project:/contracts/Liquidity.sol",
     "exportedSymbols": {
       "Liquidity": [
-        5107
+        4739
       ]
     },
-    "id": 5108,
+    "id": 4740,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5075,
+        "id": 4706,
         "literals": [
           "solidity",
-          "^",
           "0.8",
-          ".0"
+          ".9"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:26"
+        "src": "33:22:24"
       },
       {
         "abstract": true,
@@ -53,25 +52,31 @@
         "canonicalName": "Liquidity",
         "contractDependencies": [],
         "contractKind": "contract",
+        "documentation": {
+          "id": 4707,
+          "nodeType": "StructuredDocumentation",
+          "src": "59:72:24",
+          "text": " @title Liquidity Mint\n @dev Stores liquidity mint status"
+        },
         "fullyImplemented": true,
-        "id": 5107,
+        "id": 4739,
         "linearizedBaseContracts": [
-          5107
+          4739
         ],
         "name": "Liquidity",
-        "nameLocation": "78:9:26",
+        "nameLocation": "151:9:24",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
             "functionSelector": "fb4a43a6",
-            "id": 5078,
+            "id": 4710,
             "mutability": "mutable",
             "name": "totalLiquidityMinted",
-            "nameLocation": "110:20:26",
+            "nameLocation": "183:20:24",
             "nodeType": "VariableDeclaration",
-            "scope": 5107,
-            "src": "95:39:26",
+            "scope": 4739,
+            "src": "168:39:24",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -79,10 +84,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 5076,
+              "id": 4708,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "95:7:26",
+              "src": "168:7:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -90,14 +95,14 @@
             },
             "value": {
               "hexValue": "30",
-              "id": 5077,
+              "id": 4709,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "133:1:26",
+              "src": "206:1:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
                 "typeString": "int_const 0"
@@ -108,13 +113,13 @@
           },
           {
             "constant": true,
-            "id": 5088,
+            "id": 4720,
             "mutability": "constant",
             "name": "MAX_LIQUIDITY_SELL",
-            "nameLocation": "168:18:26",
+            "nameLocation": "241:18:24",
             "nodeType": "VariableDeclaration",
-            "scope": 5107,
-            "src": "143:72:26",
+            "scope": 4739,
+            "src": "216:72:24",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -122,10 +127,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 5079,
+              "id": 4711,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "143:7:26",
+              "src": "216:7:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -136,21 +141,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 5087,
+              "id": 4719,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3330303030303030",
-                "id": 5080,
+                "id": 4712,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "189:8:26",
+                "src": "262:8:24",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_30000000_by_1",
                   "typeString": "int_const 30000000"
@@ -164,7 +169,7 @@
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 },
-                "id": 5086,
+                "id": 4718,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
@@ -173,14 +178,14 @@
                   "arguments": [
                     {
                       "hexValue": "3130",
-                      "id": 5083,
+                      "id": 4715,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "208:2:26",
+                      "src": "281:2:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_10_by_1",
                         "typeString": "int_const 10"
@@ -195,26 +200,26 @@
                         "typeString": "int_const 10"
                       }
                     ],
-                    "id": 5082,
+                    "id": 4714,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
                     "nodeType": "ElementaryTypeNameExpression",
-                    "src": "200:7:26",
+                    "src": "273:7:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_type$_t_uint256_$",
                       "typeString": "type(uint256)"
                     },
                     "typeName": {
-                      "id": 5081,
+                      "id": 4713,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "200:7:26",
+                      "src": "273:7:24",
                       "typeDescriptions": {}
                     }
                   },
-                  "id": 5084,
+                  "id": 4716,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -222,7 +227,7 @@
                   "lValueRequested": false,
                   "names": [],
                   "nodeType": "FunctionCall",
-                  "src": "200:11:26",
+                  "src": "273:11:24",
                   "tryCall": false,
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
@@ -233,27 +238,27 @@
                 "operator": "**",
                 "rightExpression": {
                   "hexValue": "3138",
-                  "id": 5085,
+                  "id": 4717,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "213:2:26",
+                  "src": "286:2:24",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_18_by_1",
                     "typeString": "int_const 18"
                   },
                   "value": "18"
                 },
-                "src": "200:15:26",
+                "src": "273:15:24",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "189:26:26",
+              "src": "262:26:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -263,24 +268,24 @@
           },
           {
             "body": {
-              "id": 5105,
+              "id": 4737,
               "nodeType": "Block",
-              "src": "276:153:26",
+              "src": "348:152:24",
               "statements": [
                 {
                   "assignments": [
-                    5093
+                    4725
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5093,
+                      "id": 4725,
                       "mutability": "mutable",
                       "name": "nextLiquidityMinted",
-                      "nameLocation": "295:19:26",
+                      "nameLocation": "367:19:24",
                       "nodeType": "VariableDeclaration",
-                      "scope": 5105,
-                      "src": "287:27:26",
+                      "scope": 4737,
+                      "src": "359:27:24",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -288,10 +293,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 5092,
+                        "id": 4724,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "287:7:26",
+                        "src": "359:7:24",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -300,24 +305,24 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5097,
+                  "id": 4729,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 5096,
+                    "id": 4728,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 5094,
+                      "id": 4726,
                       "name": "totalLiquidityMinted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5078,
-                      "src": "317:20:26",
+                      "referencedDeclaration": 4710,
+                      "src": "389:20:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -326,25 +331,25 @@
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 5095,
+                      "id": 4727,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5090,
-                      "src": "340:8:26",
+                      "referencedDeclaration": 4722,
+                      "src": "412:7:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "317:31:26",
+                    "src": "389:30:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "287:61:26"
+                  "src": "359:60:24"
                 },
                 {
                   "expression": {
@@ -354,18 +359,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 5101,
+                        "id": 4733,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 5099,
+                          "id": 4731,
                           "name": "nextLiquidityMinted",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5093,
-                          "src": "367:19:26",
+                          "referencedDeclaration": 4725,
+                          "src": "438:19:24",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -374,18 +379,18 @@
                         "nodeType": "BinaryOperation",
                         "operator": "<=",
                         "rightExpression": {
-                          "id": 5100,
+                          "id": 4732,
                           "name": "MAX_LIQUIDITY_SELL",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5088,
-                          "src": "390:18:26",
+                          "referencedDeclaration": 4720,
+                          "src": "461:18:24",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "367:41:26",
+                        "src": "438:41:24",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -399,7 +404,7 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 5098,
+                      "id": 4730,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -407,13 +412,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "359:7:26",
+                      "src": "430:7:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 5102,
+                    "id": 4734,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -421,41 +426,41 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "359:50:26",
+                    "src": "430:50:24",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5103,
+                  "id": 4735,
                   "nodeType": "ExpressionStatement",
-                  "src": "359:50:26"
+                  "src": "430:50:24"
                 },
                 {
-                  "id": 5104,
+                  "id": 4736,
                   "nodeType": "PlaceholderStatement",
-                  "src": "420:1:26"
+                  "src": "491:1:24"
                 }
               ]
             },
-            "id": 5106,
+            "id": 4738,
             "name": "notExceedLiquiditySupply",
-            "nameLocation": "233:24:26",
+            "nameLocation": "306:24:24",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 5091,
+              "id": 4723,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5090,
+                  "id": 4722,
                   "mutability": "mutable",
                   "name": "_amount",
-                  "nameLocation": "266:8:26",
+                  "nameLocation": "339:7:24",
                   "nodeType": "VariableDeclaration",
-                  "scope": 5106,
-                  "src": "258:16:26",
+                  "scope": 4738,
+                  "src": "331:15:24",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -463,10 +468,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 5089,
+                    "id": 4721,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "258:7:26",
+                    "src": "331:7:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -475,41 +480,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "257:18:26"
+              "src": "330:17:24"
             },
-            "src": "224:205:26",
+            "src": "297:203:24",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 5108,
-        "src": "60:372:26",
+        "scope": 4740,
+        "src": "133:370:24",
         "usedErrors": []
       }
     ],
-    "src": "33:401:26"
+    "src": "33:472:24"
   },
   "legacyAST": {
-    "absolutePath": "project:/contracts/abstract/Liquidity.sol",
+    "absolutePath": "project:/contracts/Liquidity.sol",
     "exportedSymbols": {
       "Liquidity": [
-        5107
+        4739
       ]
     },
-    "id": 5108,
+    "id": 4740,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5075,
+        "id": 4706,
         "literals": [
           "solidity",
-          "^",
           "0.8",
-          ".0"
+          ".9"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:26"
+        "src": "33:22:24"
       },
       {
         "abstract": true,
@@ -517,25 +521,31 @@
         "canonicalName": "Liquidity",
         "contractDependencies": [],
         "contractKind": "contract",
+        "documentation": {
+          "id": 4707,
+          "nodeType": "StructuredDocumentation",
+          "src": "59:72:24",
+          "text": " @title Liquidity Mint\n @dev Stores liquidity mint status"
+        },
         "fullyImplemented": true,
-        "id": 5107,
+        "id": 4739,
         "linearizedBaseContracts": [
-          5107
+          4739
         ],
         "name": "Liquidity",
-        "nameLocation": "78:9:26",
+        "nameLocation": "151:9:24",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
             "functionSelector": "fb4a43a6",
-            "id": 5078,
+            "id": 4710,
             "mutability": "mutable",
             "name": "totalLiquidityMinted",
-            "nameLocation": "110:20:26",
+            "nameLocation": "183:20:24",
             "nodeType": "VariableDeclaration",
-            "scope": 5107,
-            "src": "95:39:26",
+            "scope": 4739,
+            "src": "168:39:24",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -543,10 +553,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 5076,
+              "id": 4708,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "95:7:26",
+              "src": "168:7:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -554,14 +564,14 @@
             },
             "value": {
               "hexValue": "30",
-              "id": 5077,
+              "id": 4709,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "133:1:26",
+              "src": "206:1:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
                 "typeString": "int_const 0"
@@ -572,13 +582,13 @@
           },
           {
             "constant": true,
-            "id": 5088,
+            "id": 4720,
             "mutability": "constant",
             "name": "MAX_LIQUIDITY_SELL",
-            "nameLocation": "168:18:26",
+            "nameLocation": "241:18:24",
             "nodeType": "VariableDeclaration",
-            "scope": 5107,
-            "src": "143:72:26",
+            "scope": 4739,
+            "src": "216:72:24",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -586,10 +596,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 5079,
+              "id": 4711,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "143:7:26",
+              "src": "216:7:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -600,21 +610,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 5087,
+              "id": 4719,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3330303030303030",
-                "id": 5080,
+                "id": 4712,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "189:8:26",
+                "src": "262:8:24",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_30000000_by_1",
                   "typeString": "int_const 30000000"
@@ -628,7 +638,7 @@
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 },
-                "id": 5086,
+                "id": 4718,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
@@ -637,14 +647,14 @@
                   "arguments": [
                     {
                       "hexValue": "3130",
-                      "id": 5083,
+                      "id": 4715,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "208:2:26",
+                      "src": "281:2:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_10_by_1",
                         "typeString": "int_const 10"
@@ -659,26 +669,26 @@
                         "typeString": "int_const 10"
                       }
                     ],
-                    "id": 5082,
+                    "id": 4714,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
                     "nodeType": "ElementaryTypeNameExpression",
-                    "src": "200:7:26",
+                    "src": "273:7:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_type$_t_uint256_$",
                       "typeString": "type(uint256)"
                     },
                     "typeName": {
-                      "id": 5081,
+                      "id": 4713,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "200:7:26",
+                      "src": "273:7:24",
                       "typeDescriptions": {}
                     }
                   },
-                  "id": 5084,
+                  "id": 4716,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -686,7 +696,7 @@
                   "lValueRequested": false,
                   "names": [],
                   "nodeType": "FunctionCall",
-                  "src": "200:11:26",
+                  "src": "273:11:24",
                   "tryCall": false,
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
@@ -697,27 +707,27 @@
                 "operator": "**",
                 "rightExpression": {
                   "hexValue": "3138",
-                  "id": 5085,
+                  "id": 4717,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "213:2:26",
+                  "src": "286:2:24",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_18_by_1",
                     "typeString": "int_const 18"
                   },
                   "value": "18"
                 },
-                "src": "200:15:26",
+                "src": "273:15:24",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "189:26:26",
+              "src": "262:26:24",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -727,24 +737,24 @@
           },
           {
             "body": {
-              "id": 5105,
+              "id": 4737,
               "nodeType": "Block",
-              "src": "276:153:26",
+              "src": "348:152:24",
               "statements": [
                 {
                   "assignments": [
-                    5093
+                    4725
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5093,
+                      "id": 4725,
                       "mutability": "mutable",
                       "name": "nextLiquidityMinted",
-                      "nameLocation": "295:19:26",
+                      "nameLocation": "367:19:24",
                       "nodeType": "VariableDeclaration",
-                      "scope": 5105,
-                      "src": "287:27:26",
+                      "scope": 4737,
+                      "src": "359:27:24",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -752,10 +762,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 5092,
+                        "id": 4724,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "287:7:26",
+                        "src": "359:7:24",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -764,24 +774,24 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5097,
+                  "id": 4729,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 5096,
+                    "id": 4728,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 5094,
+                      "id": 4726,
                       "name": "totalLiquidityMinted",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5078,
-                      "src": "317:20:26",
+                      "referencedDeclaration": 4710,
+                      "src": "389:20:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -790,25 +800,25 @@
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 5095,
+                      "id": 4727,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5090,
-                      "src": "340:8:26",
+                      "referencedDeclaration": 4722,
+                      "src": "412:7:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "317:31:26",
+                    "src": "389:30:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "287:61:26"
+                  "src": "359:60:24"
                 },
                 {
                   "expression": {
@@ -818,18 +828,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 5101,
+                        "id": 4733,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 5099,
+                          "id": 4731,
                           "name": "nextLiquidityMinted",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5093,
-                          "src": "367:19:26",
+                          "referencedDeclaration": 4725,
+                          "src": "438:19:24",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -838,18 +848,18 @@
                         "nodeType": "BinaryOperation",
                         "operator": "<=",
                         "rightExpression": {
-                          "id": 5100,
+                          "id": 4732,
                           "name": "MAX_LIQUIDITY_SELL",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5088,
-                          "src": "390:18:26",
+                          "referencedDeclaration": 4720,
+                          "src": "461:18:24",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "367:41:26",
+                        "src": "438:41:24",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -863,7 +873,7 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 5098,
+                      "id": 4730,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -871,13 +881,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "359:7:26",
+                      "src": "430:7:24",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 5102,
+                    "id": 4734,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -885,41 +895,41 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "359:50:26",
+                    "src": "430:50:24",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5103,
+                  "id": 4735,
                   "nodeType": "ExpressionStatement",
-                  "src": "359:50:26"
+                  "src": "430:50:24"
                 },
                 {
-                  "id": 5104,
+                  "id": 4736,
                   "nodeType": "PlaceholderStatement",
-                  "src": "420:1:26"
+                  "src": "491:1:24"
                 }
               ]
             },
-            "id": 5106,
+            "id": 4738,
             "name": "notExceedLiquiditySupply",
-            "nameLocation": "233:24:26",
+            "nameLocation": "306:24:24",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 5091,
+              "id": 4723,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5090,
+                  "id": 4722,
                   "mutability": "mutable",
                   "name": "_amount",
-                  "nameLocation": "266:8:26",
+                  "nameLocation": "339:7:24",
                   "nodeType": "VariableDeclaration",
-                  "scope": 5106,
-                  "src": "258:16:26",
+                  "scope": 4738,
+                  "src": "331:15:24",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -927,10 +937,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 5089,
+                    "id": 4721,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "258:7:26",
+                    "src": "331:7:24",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -939,19 +949,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "257:18:26"
+              "src": "330:17:24"
             },
-            "src": "224:205:26",
+            "src": "297:203:24",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 5108,
-        "src": "60:372:26",
+        "scope": 4740,
+        "src": "133:370:24",
         "usedErrors": []
       }
     ],
-    "src": "33:401:26"
+    "src": "33:472:24"
   },
   "compiler": {
     "name": "solc",
@@ -959,10 +969,12 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-01T21:56:33.303Z",
+  "updatedAt": "2021-11-12T13:15:54.109Z",
   "devdoc": {
+    "details": "Stores liquidity mint status",
     "kind": "dev",
     "methods": {},
+    "title": "Liquidity Mint",
     "version": 1
   },
   "userdoc": {

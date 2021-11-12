@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @title Eterland Nft World
@@ -8,7 +8,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "./abstract/ExtendedAccessControl.sol";
+import "./ExtendedAccessControl.sol";
 
 contract EterlandWorld is ERC721, ExtendedAccessControl {
     using Counters for Counters.Counter;
